@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Day ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+        url("image3.jpeg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:white;
+}
+
+.card{
+    text-align:center;
+    background:rgba(255,255,255,0.15);
+    padding:40px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    max-width:400px;
+}
+
+h1{
+    font-size:2.8rem;
+    animation:fadeIn 2s;
+}
+
+p{
+    margin:15px 0;
+    font-size:1.1rem;
+}
+
+.name{
+    color:#ffb3c6;
+    font-weight:bold;
+}
+
+.buttons{
+    position:relative;
+    margin-top:20px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    margin:10px;
+}
+
+.yes{
+    background:#ff4d6d;
+    color:white;
+}
+
+.yes:hover{
+    transform:scale(1.1);
+}
+
+.no{
+    background:white;
+    color:#ff4d6d;
+    position:absolute;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.heart{
+    position:absolute;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh); opacity:1;}
+    100%{transform:translateY(-10vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Romantic Music -->
+<audio autoplay loop>
+    <source src="HTML5/crush/high on you.exe" type="audio/mp3">
+</audio>
+
+<div class="card">
+    <h1>Happy Valentine’s Day ❤️</h1>
+
+    <p>Dear <span class="name"> Pragya </span>,</p>
+
+    <p>
+        You are my favorite hello and my hardest goodbye.💓  
+        I don't want you to overthink anymore. And you did a very big mistake by sharing your contact no. with me ✨
+        Yes i am very happy but I am nervous at same time because i want to get out from this attraction and If 
+        It is not attraction then there is a very big problem for me...Kyuki tum kabhi nhi manogi.. 
+    </p>
+
+    <h3>Will you be my Valentine? 💍💖</h3>
+
+    <div class="buttons">
+        <button class="yes" onclick="yesClick()">Yes 💘</button>
+        <button class="no" onmouseover="moveNo()">No 💔</button>
+    </div>
+</div>
+
+<script>
+function yesClick(){
+    alert("I love you so much 💖🥰 Happy Valentine’s Day!");
+}
+
+function moveNo(){
+    const noBtn=document.querySelector('.no');
+    noBtn.style.left=Math.random()*300+"px";
+    noBtn.style.top=Math.random()*200+"px";
+}
+
+// Floating hearts
+setInterval(()=>{
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*20+15+"px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),6000);
+},300);
+</script>
+
+</body>
+</html>
